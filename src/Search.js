@@ -3,7 +3,7 @@ import './index.css'
 
 function Searchbar(props){
     const style = {
-        width:"50%"
+        width:"100%"
     }
 
     return(
