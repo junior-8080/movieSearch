@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from './logo2.png'
+import { Link }from "react-router-dom"
 
 function Movie(props){
 
@@ -10,7 +11,10 @@ function Movie(props){
             }
             <div className="movieBody">
                 <h5><b>{props.movie.title}</b></h5>
-                 <a href="#" >Details</a>
+              <Link  onClick={()=>{ props.handleClick(props.movie.id)}}>
+                         <span>Details</span>
+                </Link>
+               
             </div>
         </div>
     )

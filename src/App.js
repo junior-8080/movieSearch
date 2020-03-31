@@ -2,8 +2,10 @@ import React,{Component} from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import MovieList from './Movielist'
+import MovieInfo from './MovieInfo'
+import {BrowserRouter as Router,Switch, Route} from "react-router-dom"
 import './index.css'
-let api_key = process.env.API_KEY
+let api_key = process.env.REACT_APP_API_KEY
 
 class App extends Component{
   constructor(){
@@ -12,7 +14,8 @@ class App extends Component{
       value:"",
       isLoading:false,
       error:"",
-      movie:[]
+      movie:[],
+      aMovie:{}
     }
   
   }
@@ -40,16 +43,30 @@ class App extends Component{
         error:"No result found"
       })
   }
-  
+  handleClick =(id)=>{
+       fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
+        .then(res => res.json())
+        .then(data=>{
+          // this.setState({
+          //   aMovie:data
+          // })
+          console.log(data)
+        })
+  }
   componentDidUpdate(){
         console.log('updated')
   }
   render(){
     return(
       <div className="container">
+        <Router>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
-        <MovieList movies={this.state.movie} isLoading={this.state.isLoading} error={this.state.error} />
-        {/* <Footer /> */}
+        <MovieList movies={this.state.movie} isLoading={this.state.isLoading} error={this.state.error} handleClick={this.handleClick} />
+        <Footer />
+          <Switch>
+             <Route  path="/movie/:id"  render={() => <MovieInfo data={this.state.aMovie} />} />
+          </Switch>
+        </Router>
       </div>
     )
       

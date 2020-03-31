@@ -11,20 +11,22 @@ body {
 }
 .header{
   width: 100%;
-  background-color: #ffffff;
+  background-color: rgba(0,0,0,0.6);
   display:flex;
-  align-items: center;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 1;
-  top:0;
-  
+  top:0; 
 }
-.header > img{
-      width:100px; 
+
+.header > h2{
+}
+.search{
+  align-self:center;
 }
 input[type=text]{
-  width:60%;
-  padding: 10px 14px;
+  width:80%;
+  padding: 5px 5px;
   border-style:thin;
   font-size: small;
 }
@@ -32,7 +34,7 @@ input:focus{
   outline: none;
 }
 button{
-  padding: 10px 14px;
+  padding: 5px 5px;
   border-radius: 15px 50px 30px 5px;
   background-color: white;
 }
@@ -42,13 +44,10 @@ button:focus{
 .movie-list{
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  max-width: 100%;
+  justify-content: center;
+  max-width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 125px; */
-  margin:auto
+  margin:100px 20px 100px 100px;
 
 }
 .movieCard{
