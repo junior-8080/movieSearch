@@ -10,7 +10,6 @@ function Footer(props){
     }
     return(
         <div className="footer">
-            {/* <img src={logo} alt="mdb" style={image} /> */}
             <p>Copy Right &copy;The movie Db</p>
             <p className="plast">Visit for your movie Api</p>
         </div>

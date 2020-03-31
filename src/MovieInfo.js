@@ -1,20 +1,19 @@
-import React from "react"
+import React, { Component } from "react"
 
 
-function MovieInfo (props){
-
-    return(
+class  MovieInfo  extends Component{
+    constructor(){
+        super()
+    }
+    render(){
+        return(
             <div>
-                <div>
-                    <img src={`https://image.tmdb.org/t/p/w500/${props.data.poster_path}`}  />
-                </div>
             <div>
-                <p>{props.data.title}</p>
-                <p>{props.data.overview}</p>
-                <p>{props.data.title}</p>
-                <p>{props.data.title}</p>
+                <h1>MOVIE INFO</h1>
             </div>
          </div>
     )
+    }
+    
 }
 export default MovieInfo

@@ -14,9 +14,6 @@ body {
   background-color: rgba(0,0,0,0.6);
   display:flex;
   justify-content: space-evenly;
-  position: fixed;
-  z-index: 1;
-  top:0; 
 }
 
 .header > h2{
