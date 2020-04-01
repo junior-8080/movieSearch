@@ -48,6 +48,7 @@ class  Home extends Component{
             })
             :
             this.setState({
+                movies:[],
                 isEmpty: true,
                 isLoading:false,
             })
@@ -70,7 +71,7 @@ class  Home extends Component{
         return(
             <div  className="home">
                 <div style={divStyle}>
-                     <img src={logo}  width="100%" height="100%" alt="Home-image"/>
+                     <img src={logo}  width="100%" height="100%" className="wallpaper" alt="Home-image"/>
                 </div>
                 <div style={divStyle}>
                      <Searchbar handleChange={this.handleChange} handleSubmit={this.handleSubmit} value={this.state.query}/>

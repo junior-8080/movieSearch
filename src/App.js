@@ -17,7 +17,6 @@ class App extends Component{
         <Header />
           <Switch>
             <Route path="/" exact component={Home} /> 
-            <Route path="/list" exact component={MovieList} />
             <Route  path="/list/:id" component={MovieInfo} />
           </Switch>
           <Footer />
