@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Header from './Header'
 import Footer from './Footer'
-import MovieList from './Movielist'
+import MovieList from './MovieList'
 import MovieInfo from './MovieInfo'
 import {Link,Switch, Route} from "react-router-dom"
 import Home from "./Home"
