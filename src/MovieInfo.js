@@ -25,47 +25,67 @@ class  MovieInfo  extends Component{
         })
     }
     render(){
-        console.log()
         const divStyle={
             width:"40%",
             height:"90%",
-            margin:"5px",
-            borderRadius:"25px"
+            color:"white",
+            marginTop:40
+        }
+        const divStyle1={
+            width:"40%",
+            height:"90%",
+            color:"white",
+            backgroundColor:"#000000",
+            marginTop:40
+
+        }
+        const homeStyle={
+            backgroundImage:`url(https://image.tmdb.org/t/p/w500/${this.state.aMovie.poster_path})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize:"100%",
+            backgroundPosition:"center",
         }
          const overview={
              textAlign:"justify",
              padding:"0px 15px 0px 15px",
-             fontSize:14
+             fontSize:14,
+             
          }
          const vote ={
-            display:"flex",
-            justifyContent:"space-evenly"
+            // display:"flex",
+            // justifyContent:"space-evenly"
          }
          const link={
              textDecoration:"none"
          }
+         const title={
+             color:"#00FF00"
+         }
         return(  
         this.state.aMovie.length !==0 ?
-        <div  className="home">
+        <div  className="home" style={homeStyle}>
             <div style={divStyle}>
                  {
                     this.state.aMovie.poster_path? <img src={`https://image.tmdb.org/t/p/w500/${this.state.aMovie.poster_path}`}  className="wallpaper" alt="movie-wallpaper" width="100%" height="100%"/> :  <img src={logo} className="wallpaper" alt="movie-wallpaper" width="100%" height="100%" />
                  }
             </div>
-            <div style={divStyle} className="details">
-                <h1>{this.state.aMovie.title}</h1>
-                <h6>{this.state.aMovie.release_date}</h6>
+            <div style={divStyle1} className="details">
+                <h1 style={title}>{this.state.aMovie.title}</h1>
+                <p style={overview}>{this.state.aMovie.overview}</p>
                  <div>
-                    <p style={overview}>{this.state.aMovie.overview}</p>
-                    <a href={this.state.aMovie.homepage} style={link}>
-                         {this.state.aMovie.homepage}
-                    </a>
-                    
+                    <label>Release Date:</label><p>{this.state.aMovie.release_date}</p>
+                    <label>Popularity:</label><p>{this.state.aMovie.popularity}</p>
                  </div>
                  <div style={vote}>
-                    <p title="average vote"><i className="fas fa-heart"> Average:</i> {this.state.aMovie.vote_average}</p>
-                    <p><i className="fas fa-heart"> Votes:</i> {this.state.aMovie.vote_count}</p>
+                 <label><i className="fas fa-heart"> Average Votes:</i></label><p title="average vote">{this.state.aMovie.vote_average}</p>
+                 <label><i className="fas fa-heart"> Votes:</i></label><p>{this.state.aMovie.vote_count}</p>
+                <label><i>Running Time:</i></label><p>{this.state.aMovie.runtime}</p>
+
                  </div>
+                 <a href={this.state.aMovie.homepage} style={link}>
+                         {this.state.aMovie.homepage}
+                </a>
+                 
                  
             </div>
         </div>

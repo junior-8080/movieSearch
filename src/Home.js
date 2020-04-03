@@ -58,8 +58,19 @@ class  Home extends Component{
             width:"40%",
             height:"90%",
         }
+        const divStyle1={
+            width:"40%",
+            height:"90%",
+            // backgroundImage:"rgba(0,0,0,0.3);"
+        }
         const isLoadingStyle={
             color:"red",
+        }
+        const homeStyle={
+            backgroundImage:`url(${logo})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize:"100%",
+            backgroundPosition:"center"
         }
         let movieList = this.state.movies.length === 0 && this.state.noResult ? <h4 style={isLoadingStyle}>No Result Found</h4>
          :
@@ -69,11 +80,11 @@ class  Home extends Component{
         
          
         return(
-            <div  className="home">
+            <div  className="home" style={homeStyle}>
                 <div style={divStyle}>
                      <img src={logo}  width="100%" height="100%" className="wallpaper" alt="Home-image"/>
                 </div>
-                <div style={divStyle}>
+                <div style={divStyle1}>
                      <Searchbar handleChange={this.handleChange} handleSubmit={this.handleSubmit} value={this.state.query}/>
                      <div className="movies">
                      { this.state.isLoading? <h4 style={isLoadingStyle}>Loading....</h4> :movieList}

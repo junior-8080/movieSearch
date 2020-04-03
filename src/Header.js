@@ -1,30 +1,29 @@
 import React  from  'react'
 import {Link} from "react-router-dom"
-import logo from './logo4.jpeg'
+import logo1 from "./mm2.png"
 import Searchbar from './Search.js'
 function Header(props){
     const h2Style ={
         textDecoration:"none",
-        color:"black",
+        marginLeft:"10%",
+        heigth:10,
+        padding: 10,
+        width:200
     }
-    const pStyle ={
-        alignSelf:"center",
-        fontSize:"12px",
-       
-    }
-    const logo={
-        borderWidth:2,
-        borderColor:"#7CFC00",
-        borderStyle:"solid",
-        padding:10,
-        borderRadius:25
-    }
+    // const pStyle ={
+    //     alignSelf:"justify",
+    //     fontSize:"10px" ,
+    //     padding:0,
+    //     margin:0,
+    // }
+
     return(
         <div  className="header">
             <Link to="/" style={h2Style}>
-                <h2 style={logo}>Movies</h2>
+                {/* <p style={pStyle}>Powered By</p>
+                <p style={pStyle}>The Movie DB</p> */}
+                <img src={logo1} width="100%" height="50px"/>
             </Link>
-            <p style={pStyle}>Moie Search App</p>
         </div>
     )
 }
