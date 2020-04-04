@@ -61,16 +61,9 @@ class  Home extends Component{
         const divStyle1={
             width:"40%",
             height:"90%",
-            // backgroundImage:"rgba(0,0,0,0.3);"
         }
         const isLoadingStyle={
-            color:"red",
-        }
-        const homeStyle={
-            backgroundImage:`url(${logo})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize:"100%",
-            backgroundPosition:"center"
+            color:"#00FF00",
         }
         let movieList = this.state.movies.length === 0 && this.state.noResult ? <h4 style={isLoadingStyle}>No Result Found</h4>
          :
@@ -80,7 +73,9 @@ class  Home extends Component{
         
          
         return(
-            <div  className="home" style={homeStyle}>
+            <div>
+                <img src={logo} className="background "/>
+            <div  className="home">
                 <div style={divStyle}>
                      <img src={logo}  width="100%" height="100%" className="wallpaper" alt="Home-image"/>
                 </div>
@@ -92,6 +87,8 @@ class  Home extends Component{
                      </div>
                 </div>
             </div>
+        </div>
+            
     )
     }
 }

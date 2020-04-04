@@ -1,18 +1,11 @@
 .footer {
   background-color:#000000;
   width: 100%;
-  /* position: fixed;
-  bottom: 0; */
   color: white;
   display: flex;
-  justify-content:center;
-  justify-items: center;
+  justify-content:space-evenly;
   padding:5px 0px 5px 10px;
   font-size: smaller;
-
-}
-.footer > p{
-  align-self: center;
 
 }
 .footer > .plast {

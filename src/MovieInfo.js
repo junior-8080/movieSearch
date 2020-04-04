@@ -29,22 +29,19 @@ class  MovieInfo  extends Component{
             width:"40%",
             height:"90%",
             color:"white",
-            marginTop:40
+            marginTop:40,
+            filter:"none"
         }
         const divStyle1={
             width:"40%",
             height:"90%",
             color:"white",
             backgroundColor:"#000000",
-            marginTop:40
+            marginTop:40,
+            filter: "none"
 
         }
-        const homeStyle={
-            backgroundImage:`url(https://image.tmdb.org/t/p/w500/${this.state.aMovie.poster_path})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize:"100%",
-            backgroundPosition:"center",
-        }
+
          const overview={
              textAlign:"justify",
              padding:"0px 15px 0px 15px",
@@ -60,10 +57,13 @@ class  MovieInfo  extends Component{
          }
          const title={
              color:"#00FF00"
+            
          }
         return(  
         this.state.aMovie.length !==0 ?
-        <div  className="home" style={homeStyle}>
+        <div>
+        <img src={`https://image.tmdb.org/t/p/w500/${this.state.aMovie.poster_path}`} className="background "/>
+        <div  className="home" >
             <div style={divStyle}>
                  {
                     this.state.aMovie.poster_path? <img src={`https://image.tmdb.org/t/p/w500/${this.state.aMovie.poster_path}`}  className="wallpaper" alt="movie-wallpaper" width="100%" height="100%"/> :  <img src={logo} className="wallpaper" alt="movie-wallpaper" width="100%" height="100%" />
@@ -85,8 +85,7 @@ class  MovieInfo  extends Component{
                  <a href={this.state.aMovie.homepage} style={link}>
                          {this.state.aMovie.homepage}
                 </a>
-                 
-                 
+            </div>
             </div>
         </div>
         :null
