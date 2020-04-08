@@ -1,31 +1,26 @@
-import React  from  'react'
+import React from "react"
 import {Link} from "react-router-dom"
-import logo1 from "./mm2.png"
-import Searchbar from './Search.js'
-function Header(props){
-    const h2Style ={
-        textDecoration:"none",
-        marginLeft:"10%",
-        heigth:10,
-        padding: 10,
-        width:200
-    }
-    // const pStyle ={
-    //     alignSelf:"justify",
-    //     fontSize:"10px" ,
-    //     padding:0,
-    //     margin:0,
-    // }
 
+
+function Header(){
     return(
-        <div  className="header">
-            <Link to="/" style={h2Style}>
-                {/* <p style={pStyle}>Powered By</p>
-                <p style={pStyle}>The Movie DB</p> */}
-                <img src={logo1} width="100%" height="50px"/>
+        <nav className="navs">
+            <ul >
+            <Link  to="/"className="link">
+                <li className="list">Logo</li>
             </Link>
-        </div>
+            <Link className="link">
+                <li className="list">Feature</li>
+            </Link>
+            <Link className="link">
+                <li className="list">Category</li>
+            </Link>
+            <Link className="link">
+                <li className="list">Et</li>
+            </Link>
+            </ul>
+        </nav>
     )
+  
 }
-
-export default Header;
+export default Header
